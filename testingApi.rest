@@ -39,11 +39,12 @@ DELETE http://localhost:5000/user/0b170c5b-0530-4afc-bdb1-f58b2555ecbf
 #6. login
 ###
 POST http://localhost:5000/login
+Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "ujang@gmail.com",
-  "password": "123456",
+    "email": "ujang@Gmail.com",
+    "password": "123456"
 }
 
 #7. status user
@@ -52,4 +53,4 @@ GET http://localhost:5000/status
 
 #8. logout
 ###
-DELETE http://localhost:5000/logout
+DELETE http://localhost:5000/logout/
