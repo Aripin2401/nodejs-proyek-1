@@ -43,7 +43,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "james@Gmail.com",
+    "email": "ujang@Gmail.com",
     "password": "123456"
 }
 
@@ -54,3 +54,22 @@ GET http://localhost:5000/status
 #8. logout
 ###
 DELETE http://localhost:5000/logout/
+
+#9. get product
+###
+GET http://localhost:5000/product
+
+#10. create product
+###
+POST http://localhost:5000/product
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "product 2",
+    "price": 200000
+}
+
+#11. get product by id
+###
+GET http://localhost:5000/product/7ce10179-93e5-442b-8d18-7ea3f4dc0c1b
