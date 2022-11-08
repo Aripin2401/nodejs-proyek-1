@@ -43,7 +43,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "ujang@Gmail.com",
+    "email": "james@Gmail.com",
     "password": "123456"
 }
 

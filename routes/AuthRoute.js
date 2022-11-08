@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.post('/login', Login);
 router.get('/status', Me);
-router.delete('/logout/:id', logOut);
+router.delete('/logout/', logOut);
 
 export default router;
