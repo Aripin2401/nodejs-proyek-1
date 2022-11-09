@@ -35,6 +35,13 @@ const Users = db.define('users', {
             notNull: true,
         }
     },
+    number: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            notNull: true,
+        }
+    },
     role: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -43,7 +50,7 @@ const Users = db.define('users', {
         }
     },
 }, {
-    freezeTableName: true,
+    freezeTableName: false,
 });
 
 export default Users;

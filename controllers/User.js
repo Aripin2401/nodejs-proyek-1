@@ -4,7 +4,7 @@ import argon2 from "argon2";
 export const getUsers = async (req, res) => {
     try {
         const response = await User.findAll({
-            attributes: ["uuid", "name", "email", "role"]
+            attributes: ["uuid", "name", "email", "number","role"]
         });
         res.status(200).json(response);
     } catch (error) {
@@ -15,7 +15,7 @@ export const getUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
     try {
         const response = await User.findOne({
-            attributes: ["uuid", "name", "email", "role"],
+            attributes: ["uuid", "name", "email", "number", "role"],
             where: {
                 uuid: req.params.id,
             }
@@ -27,7 +27,7 @@ export const getUserById = async (req, res) => {
 }
 
 export const createUser = async (req, res) => {
-    const { name, email, password, confPassword , role } = req.body;
+    const { name, email, password, number, confPassword , role } = req.body;
     if (password !== confPassword) return res.status(400).json({ message: "Password does not match" });
     const hashedPassword = await argon2.hash(password);
     try {
@@ -35,10 +35,11 @@ export const createUser = async (req, res) => {
             name : name,
             email : email,
             password: hashedPassword,
+            number: number,
             role : role
         });
         res.status(201).json({ message: "User created successfully" });
-    } catch {
+    } catch(error) {
         res.status(400).json(error);
     }
 }
@@ -50,7 +51,7 @@ export const updateUser = async (req, res) => {
         }
     });
     if(!user) return res.status(404).json({ message: "User not found" });
-    const { name, email, password, confPassword , role } = req.body;
+    const { name, email, password, number, confPassword , role } = req.body;
     let hashedPassword;
     if (password === "" || confPassword === null) {
         hashedPassword = user.password;
@@ -62,7 +63,8 @@ export const updateUser = async (req, res) => {
         await User.update({
             name : name,
             email : email,
-            password: hashedPassword,
+            password : hashedPassword,
+            number : number,
             role : role
         },{
             where :{
