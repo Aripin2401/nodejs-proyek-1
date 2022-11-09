@@ -29,8 +29,8 @@ export const Login = async (req, res) => {
      });
      const mailOptions = {
          from: process.env.EMAIL,
-         to: 'ujangarifin06@gmail.com',
-         subject: 'Login Success',
+         to: user.email,
+         subject: 'Login Success Make Sure',
          text: `You login here ${req.ip}`
      };
      transporter.sendMail(mailOptions, (err, info) => {

@@ -4,8 +4,8 @@ POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-  "name": "Abraham Aripin",
-  "email": "abraham@gmail.com",
+  "name": "Fajar Suhanna",
+  "email": "alhidayahkircon@gmail.com",
   "password": "123456",
   "confPassword": "123456",
   "number": "0812345678",
@@ -45,7 +45,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "ujang@Gmail.com",
+    "email": "alhidayahkircon@gmail.com",
     "password": "123456"
 }
 
@@ -68,7 +68,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "name": "product 7",
+    "name": "product by alhidayahkircon@gmail.com",
     "price": 200000
 }
 
@@ -83,7 +83,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "name": "product yang di Upgrade: ",
+    "name": "product by alhidayahkircon@gmail.com ",
     "price": 200000
 }
 
